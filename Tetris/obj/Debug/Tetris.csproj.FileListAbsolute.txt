@@ -20,3 +20,5 @@ C:\Users\EhudC\Tetris\Tetris\bin\Debug\Tetris.exe.config
 C:\Users\EhudC\Tetris\Tetris\obj\Debug\Tetris.exe
 C:\Users\EhudC\Tetris\Tetris\obj\Debug\Tetris.pdb
 C:\Users\EhudC\Tetris\Tetris\obj\Debug\Tetris.csprojResolveAssemblyReference.cache
+C:\Users\EhudC\Tetris\Tetris\bin\Debug\Tetris.exe
+C:\Users\EhudC\Tetris\Tetris\bin\Debug\Tetris.pdb

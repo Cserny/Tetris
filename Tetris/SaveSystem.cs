@@ -12,7 +12,7 @@ namespace Tetris
     class SaveSystem
     {
         public static List<ScoreEntry> Scores = new List<ScoreEntry>();
-        public string SaveFilePath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "scores.xml")));
+        public string SaveFilePath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "C#_Tetris"), "scores.xml"));
         public string SaveDirectoryPath = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "C#_Tetris"));
         public SaveSystem()
         {
