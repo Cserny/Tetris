@@ -11,7 +11,7 @@ namespace Tetris
     {
         public int[]  X, Y;
         public int Sort;
-        public bool Status; //For rotating purposes
+        public int Status; //For rotating purposes
 
         public Tile(int sort)
         {
@@ -51,7 +51,7 @@ namespace Tetris
                     break;
             }
             Sort = sort;
-            Status = true;
+            Status = 0;
         }
         public void Move(int x, int y)
         {
@@ -63,56 +63,130 @@ namespace Tetris
         }
         public void Rotate()
         {
-            int sign = (Status ? 1 : -1);
+            int sign = (Status % 4 == 0 || Status % 4 == 1 ? 1 : -1);
+            Console.WriteLine("Status {0}, Sign: {1}", Status, sign);
             switch (Sort)
             {
                 case 1: //I-tile
-                    X[0] += 2 * sign;
-                    X[1] += 1 * sign;
-                    X[3] -= 1 * sign;
-                    Y[0] -= 1 * sign;
-                    Y[2] += 1 * sign;
-                    Y[3] += 2 * sign;
-                    break;  
+                    switch (Status % 2)
+                    {
+                        case 0:
+                            X[0] += 2 * sign;
+                            X[1] += 1 * sign;
+                            X[3] -= 1 * sign;
+                            Y[0] -= 1 * sign;
+                            Y[2] += 1 * sign;
+                            Y[3] += 2 * sign;
+                            break;
+                        case 1:
+                            X[0] += 1 * sign;
+                            X[2] -= 1 * sign;
+                            X[3] -= 2 * sign;
+                            Y[0] += 2 * sign;
+                            Y[1] += 1 * sign;
+                            Y[3] -= 1 * sign;
+                            break;
+                    }
+                    break;
                 case 2: //J-tile
-                    X[0] += 1 * sign;
-                    X[2] -= 1 * sign;
-                    X[3] -= 2 * sign;
-                    Y[1] -= 1 * sign;
-                    Y[3] += 1 * sign;
+                    switch (Status % 2)
+                    {
+                        case 0:
+                            X[0] += 1 * sign;
+                            X[2] -= 1 * sign;
+                            X[3] -= 2 * sign;
+                            Y[1] -= 1 * sign;
+                            Y[3] += 1 * sign;
+                            break;
+                        case 1:
+                            X[1] += 1 * sign;
+                            X[3] -= 1 * sign;
+                            Y[0] += 1 * sign;
+                            Y[2] -= 1 * sign;
+                            Y[3] -= 2 * sign;
+                            break;
+                    }
                     break;
                 case 3: //L-tile
-                    X[1] += 1 * sign;
-                    X[3] -= 1 * sign;
-                    Y[0] += 1 * sign;
-                    Y[1] -= 2 * sign;
-                    Y[2] -= 1 * sign;
+                    switch (Status % 2)
+                    {
+                        case 0:
+                            X[1] += 1 * sign;
+                            X[3] -= 1 * sign;
+                            Y[0] += 1 * sign;
+                            Y[1] -= 2 * sign;
+                            Y[2] -= 1 * sign;
+                            break;
+                        case 1:
+                            X[0] -= 1 * sign;
+                            X[1] += 2 * sign;
+                            X[2] += 1 * sign;
+                            Y[1] += 1 * sign;
+                            Y[3] -= 1 * sign;
+                            break;
+                    }
                     break;
                 case 4: //O-tile - doesn't need to be rotated
                     break;
                 case 5: //S-tile
-                    X[0] += 1 * sign;
-                    X[2] += 1 * sign;
-                    Y[1] += 1 * sign;
-                    Y[2] -= 2 * sign;
-                    Y[3] -= 1 * sign;
+                    switch (Status % 2)
+                    {
+                        case 0:
+                            X[0] += 1 * sign;
+                            X[2] += 1 * sign;
+                            Y[1] += 1 * sign;
+                            Y[2] -= 2 * sign;
+                            Y[3] -= 1 * sign;
+                            break;
+                        case 1:
+                            X[1] -= 1 * sign;
+                            X[2] += 2 * sign;
+                            X[3] += 1 * sign;
+                            Y[0] += 1 * sign;
+                            Y[2] += 1 * sign;
+                            break;
+                    }
                     break;
                 case 6: //T-tile
-                    X[0] += 1 * sign;
-                    X[3] -= 1 * sign;
-                    X[1] += 1 * sign;
-                    Y[1] -= 2 * sign;
-                    Y[2] -= 1 * sign;
+                    switch (Status % 2)
+                    {
+                        case 0:
+                            X[0] += 1 * sign;
+                            X[3] -= 1 * sign;
+                            X[1] += 1 * sign;
+                            Y[1] -= 2 * sign;
+                            Y[2] -= 1 * sign;
+                            break;
+                        case 1:
+                            X[1] += 2 * sign;
+                            X[2] += 1 * sign;
+                            Y[0] += 1 * sign;
+                            Y[1] += 1 * sign;
+                            Y[3] -= 1 * sign;
+                            break;
+                    }
                     break;
                 case 7: //Z-tile
-                    X[0] += 2 * sign;
-                    X[1] += 1 * sign;
-                    X[3] -= 1 * sign;
-                    Y[0] -= 1 * sign;
-                    Y[2] -= 1 * sign;
+                    switch (Status % 2)
+                    {
+                        case 0:
+                            X[0] += 2 * sign;
+                            X[1] += 1 * sign;
+                            X[3] -= 1 * sign;
+                            Y[0] -= 1 * sign;
+                            Y[2] -= 1 * sign;
+                            break;
+                        case 1:
+                            X[0] += 1 * sign;
+                            X[2] += 1 * sign;
+                            Y[0] += 2 * sign;
+                            Y[1] += 1 * sign;
+                            Y[3] -= 1 * sign;
+                            break;
+                    }
                     break;
             }
-            Status = !Status;
+            Status++;
         }
     }
 }

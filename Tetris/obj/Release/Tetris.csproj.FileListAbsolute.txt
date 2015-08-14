@@ -4,3 +4,8 @@ C:\Users\EhudC\Desktop\C# Projects\Tetris\Tetris\bin\Release\Tetris.pdb
 C:\Users\EhudC\Desktop\C# Projects\Tetris\Tetris\obj\Release\Tetris.csprojResolveAssemblyReference.cache
 C:\Users\EhudC\Desktop\C# Projects\Tetris\Tetris\obj\Release\Tetris.exe
 C:\Users\EhudC\Desktop\C# Projects\Tetris\Tetris\obj\Release\Tetris.pdb
+C:\Users\EhudC\Tetris\Tetris\bin\Release\Tetris.exe.config
+C:\Users\EhudC\Tetris\Tetris\obj\Release\Tetris.exe
+C:\Users\EhudC\Tetris\Tetris\obj\Release\Tetris.pdb
+C:\Users\EhudC\Tetris\Tetris\bin\Release\Tetris.exe
+C:\Users\EhudC\Tetris\Tetris\bin\Release\Tetris.pdb
