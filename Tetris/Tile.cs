@@ -64,7 +64,6 @@ namespace Tetris
         public void Rotate()
         {
             int sign = (Status % 4 == 0 || Status % 4 == 1 ? 1 : -1);
-            Console.WriteLine("Status {0}, Sign: {1}", Status, sign);
             switch (Sort)
             {
                 case 1: //I-tile
