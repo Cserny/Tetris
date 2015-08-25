@@ -18,8 +18,8 @@ namespace Tetris
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter your name...");
-            CurrentName = Console.ReadLine();
+            CurrentName = new Dialog().Prompt("What's your name?", "Enter below:");
+
             Area = new PlayingArea();
             Surface = new Surface();
             SaveSystem = new SaveSystem();
@@ -40,7 +40,6 @@ namespace Tetris
         static void NewGame()
         {
             CurrentScore = 0;
-            //Write new Highscore in file
             Area.Restore();
             Surface.GravityTimer.Interval = 500;
             Surface.GravityTimer.Enabled = true;
@@ -105,7 +104,6 @@ namespace Tetris
                     }
                     break;
                 case "Pause":
-                    //Doesn't safe rest time of one circualtion
                     Surface.GravityTimer.Enabled = !Surface.GravityTimer.Enabled;
                     break;
             }

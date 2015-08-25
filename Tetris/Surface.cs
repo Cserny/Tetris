@@ -35,7 +35,7 @@ namespace Tetris
             
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Location = new Point(25, 25);
+            StartPosition = FormStartPosition.CenterScreen;
 
             Font = new Font("Franklin Gothic", 15);
             
@@ -188,6 +188,7 @@ namespace Tetris
                 }    
             }
         }
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
             if (OnUserReaction != null)

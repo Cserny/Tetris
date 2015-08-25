@@ -9,3 +9,5 @@ C:\Users\EhudC\Tetris\Tetris\obj\Release\Tetris.exe
 C:\Users\EhudC\Tetris\Tetris\obj\Release\Tetris.pdb
 C:\Users\EhudC\Tetris\Tetris\bin\Release\Tetris.exe
 C:\Users\EhudC\Tetris\Tetris\bin\Release\Tetris.pdb
+C:\Users\EhudC\Tetris\Tetris\obj\Release\Tetris.Surface.resources
+C:\Users\EhudC\Tetris\Tetris\obj\Release\Tetris.csproj.GenerateResource.Cache
